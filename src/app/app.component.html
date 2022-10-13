@@ -1,0 +1,66 @@
+<app-progress #progress (stateChange)="onStateChange($event)">
+  <app-progress-step>
+    <h1>step 1</h1>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, velit
+      eius expedita quis tempore suscipit minima repudiandae. Magnam tempore,
+      nostrum facilis quas, cumque dicta eveniet vero, nisi cum ipsa eos.
+    </p>
+    <button mat-raised-button color="primary" (click)="goNext(progress)">
+      next
+    </button>
+  </app-progress-step>
+  <app-progress-step>
+    <h1>step 2</h1>
+
+    <form class="example-form" [formGroup]="testForm">
+      <mat-form-field class="example-full-width">
+        <mat-label>Favorite food</mat-label>
+        <input
+          formControlName="food"
+          matInput
+          placeholder="Ex. Pizza"
+          value="Sushi"
+        />
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Leave a comment</mat-label>
+        <textarea
+          matInput
+          formControlName="comment"
+          placeholder="Ex. It makes me feel..."
+        ></textarea>
+      </mat-form-field>
+      <button progressStepPrev mat-raised-button color="accent">prev</button>
+      <button
+        style="margin-left: 10px"
+        progressStepNext
+        [disabled]="!testForm.valid"
+        mat-raised-button
+        color="primary"
+      >
+        next
+      </button>
+    </form>
+  </app-progress-step>
+  <app-progress-step>
+    <h1>step 3</h1>
+    <p>
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda sint
+      consectetur est quos voluptatem eveniet sed maxime exercitationem officia.
+      Ipsa porro inventore earum commodi vero vel deleniti unde ad ipsam?
+    </p>
+    <button progressStepPrev mat-raised-button color="accent">prev</button>
+    <button progressStepNext mat-raised-button color="primary">next</button>
+  </app-progress-step>
+  <app-progress-step>
+    <h1>step 4</h1>
+    <p>
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda sint
+      consectetur est quos voluptatem eveniet sed maxime exercitationem officia.
+    </p>
+    <button progressStepPrev mat-raised-button color="accent">prev</button>
+    <button progressStepNext mat-raised-button color="primary">next</button>
+  </app-progress-step>
+</app-progress>
